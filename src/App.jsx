@@ -520,7 +520,8 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               textAlign: "center",
               transition: "background-color 0.2s ease",
-              fontWeight: "500"
+              fontWeight: "500",
+              boxSizing: "border-box"
             }}
             onMouseEnter={(e) => e.target.style.backgroundColor = "#333333"}
             onMouseLeave={(e) => e.target.style.backgroundColor = "#000000"}
@@ -907,7 +908,8 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
               fontWeight: "500",
-              marginTop: "15px"
+              marginTop: "15px",
+              boxSizing: "border-box"
             }}
             onMouseEnter={(e) => {
               if (activities.length > 0) {
@@ -1164,7 +1166,8 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               marginBottom: window.innerWidth <= 768 ? "12px" : "10px",
               transition: "background-color 0.2s ease",
-              fontWeight: "500"
+              fontWeight: "500",
+              boxSizing: "border-box"
             }}
             onMouseEnter={(e) => {
               if (!loadingSuggestion) {
@@ -1424,7 +1427,8 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
-              fontWeight: "500"
+              fontWeight: "500",
+              boxSizing: "border-box"
             }}
             onMouseEnter={(e) => e.target.style.backgroundColor = "#333333"}
             onMouseLeave={(e) => e.target.style.backgroundColor = "#000000"}
