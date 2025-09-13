@@ -1442,9 +1442,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               }
             }}
           >
-            {saveMessage.includes("✅") ? "✅ Aktivitet gemt!" : 
-             saveMessage.includes("⚠️") ? saveMessage : 
-             "Gem aktivitet"}
+            {saveMessage || "Gem aktivitet"}
           </button>
           {saveMessage && (
             <div style={{
