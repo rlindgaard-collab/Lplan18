@@ -1188,7 +1188,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               }
             }}
           >
-            {loadingSuggestion ? "Genererer forslag..." : "Lav forslag"}
+            {loadingSuggestion ? "✨ GPT arbejder..." : "Lav forslag"}
           </button>
           <div style={{
             border: "1px solid #d1d5db",
@@ -1417,7 +1417,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
                 textAlign: "center",
                 padding: "20px"
               }}>
-                Klik på 'Lav forslag' for at få et aktivitetsforslag baseret på din læreplan og kompetencemål.
+                Klik på 'Lav forslag\' for at få et aktivitetsforslag baseret på din læreplan og kompetencemål.
               </div>
             )}
           </div>
@@ -1435,22 +1435,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
-              fontWeight: "500",
-              boxSizing: "border-box"
-            }}
-            onMouseEnter={(e) => {
-              if (!saveMessage.includes("✅") && !saveMessage.includes("⚠️")) {
-                e.target.style.backgroundColor = "#2563eb";
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (saveMessage.includes("✅")) {
-                e.target.style.backgroundColor = "#10b981";
-              } else if (saveMessage.includes("⚠️")) {
-                e.target.style.backgroundColor = "#ef4444";
-              } else {
-                e.target.style.backgroundColor = "#3b82f6";
-              }
+              fontWeight: "500"
             }}
           >
             {saveMessage || "Gem aktivitet"}
