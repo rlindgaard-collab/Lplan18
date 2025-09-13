@@ -185,11 +185,13 @@ ${(goals["færdighedsmål"] || []).join("\n")}
   // Gem aktivitet (max 3)
   const saveActivity = () => {
     if (!suggestion) {
-      alert("Der er intet forslag at gemme.");
+      setSaveMessage("⚠️ Der er intet forslag at gemme.");
+      setTimeout(() => setSaveMessage(""), 3000);
       return;
     }
     if (activities.length >= 4) {
-      alert("Du kan kun gemme op til 4 aktiviteter.");
+      setSaveMessage("⚠️ Du kan kun gemme op til 4 aktiviteter.");
+      setTimeout(() => setSaveMessage(""), 3000);
       return;
     }
     setActivities([...activities, { text: suggestion, reflection: "" }]);
@@ -1417,7 +1419,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
             onClick={saveActivity}
             style={{
               padding: window.innerWidth <= 480 ? "14px 18px" : window.innerWidth <= 768 ? "12px 16px" : "10px 20px",
-              backgroundColor: "#000000",
+              backgroundColor: saveMessage.includes("✅") ? "#10b981" : "#000000",
               color: "white",
               border: "none",
               borderRadius: "5px",
@@ -1427,18 +1429,24 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
               fontWeight: "500",
-              boxSizing: "border-box"
+              if (saveMessage.includes("✅")) {
+                e.target.style.backgroundColor = "#10b981";
+              } else if (saveMessage.includes("⚠️")) {
+                e.target.style.backgroundColor = "#ef4444";
+              } else {
             }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "#333333"}
+              if (!saveMessage.includes("✅") && !saveMessage.includes("⚠️")) {
             onMouseLeave={(e) => e.target.style.backgroundColor = "#000000"}
           >
-            Gem aktivitet
+            {saveMessage.includes("✅") ? "✅ Aktivitet gemt!" : 
+             saveMessage.includes("⚠️") ? saveMessage : 
+             "Gem aktivitet"}
           </button>
           {saveMessage && (
             <div style={{
               marginTop: "10px",
               padding: "8px 12px",
-              backgroundColor: "#10b981",
+              backgroundColor: saveMessage.includes("✅") ? "#10b981" : "#ef4444",
               color: "white",
               borderRadius: "4px",
               fontSize: window.innerWidth <= 480 ? "14px" : "15px",
