@@ -516,9 +516,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               cursor: "pointer",
               border: "none",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
-              width: "100%",
-             boxSizing: "border-box",
-              boxSizing: "border-box",
+              width: window.innerWidth <= 1024 ? "100%" : "auto",
               textAlign: "center",
               transition: "background-color 0.2s ease",
               fontWeight: "500"
@@ -903,9 +901,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               border: "none",
               borderRadius: "5px",
               cursor: activities.length === 0 ? "not-allowed" : "pointer",
-              width: "100%",
-             boxSizing: "border-box",
-              boxSizing: "border-box",
+              width: window.innerWidth <= 1024 ? "100%" : "auto",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
               fontWeight: "500",
@@ -1161,9 +1157,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               border: "none",
               borderRadius: "5px",
               cursor: loadingSuggestion ? "not-allowed" : "pointer",
-              width: "100%",
-             boxSizing: "border-box",
-              boxSizing: "border-box",
+              width: window.innerWidth <= 1024 ? "100%" : "auto",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               marginBottom: window.innerWidth <= 768 ? "12px" : "10px",
               transition: "background-color 0.2s ease",
@@ -1392,7 +1386,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
                               lineHeight: "1.6"
                             }}>
                               {line}
-              className="w-full sm:flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
+                            </div>
                           );
                         }
                         
@@ -1400,7 +1394,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
                         return <div key={index} style={{ height: "8px" }} />;
                       })}
                     </div>
-              className="w-full sm:flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  );
                 })()}
               </div>
             ) : (
@@ -1423,9 +1417,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               border: "none",
               borderRadius: "5px",
               cursor: "pointer",
-              width: "100%",
-             boxSizing: "border-box",
-              boxSizing: "border-box",
+              width: window.innerWidth <= 1024 ? "100%" : "auto",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
               fontWeight: "500"
