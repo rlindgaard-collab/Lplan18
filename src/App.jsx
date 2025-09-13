@@ -1400,7 +1400,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
             ) : (
               <div style={{ 
                 fontStyle: "italic", 
-                color: "#6b7280",
+            <label>Evaluering:</label>
                 textAlign: "center",
                 padding: "20px"
               }}>
