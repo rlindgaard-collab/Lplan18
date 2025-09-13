@@ -52,11 +52,6 @@ function App() {
     profile: false,
     goals: false
   });
-  const [collapsedSections, setCollapsedSections] = useState({
-    summary: false,
-    profile: false,
-    goals: false
-  });
 
   // Tab colors for activities
   const tabColors = [
