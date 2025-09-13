@@ -520,8 +520,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               textAlign: "center",
               transition: "background-color 0.2s ease",
-              fontWeight: "500",
-              boxSizing: "border-box"
+              fontWeight: "500"
             }}
             onMouseEnter={(e) => e.target.style.backgroundColor = "#333333"}
             onMouseLeave={(e) => e.target.style.backgroundColor = "#000000"}
