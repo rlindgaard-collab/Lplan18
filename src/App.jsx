@@ -1444,20 +1444,6 @@ ${(goals["færdighedsmål"] || []).join("\n")}
           >
             {saveMessage || "Gem aktivitet"}
           </button>
-          {saveMessage && (
-            <div style={{
-              marginTop: "10px",
-              padding: "8px 12px",
-              backgroundColor: saveMessage.includes("✅") ? "#10b981" : "#ef4444",
-              color: "white",
-              borderRadius: "4px",
-              fontSize: window.innerWidth <= 480 ? "14px" : "15px",
-              fontWeight: "500",
-              textAlign: "center"
-            }}>
-              {saveMessage}
-            </div>
-          )}
         </div>
       </div>
     </div>
