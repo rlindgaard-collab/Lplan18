@@ -1188,20 +1188,21 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               }
             }}
           >
-            {loadingSuggestion ? "⏳ Genererer forslag..." : "Lav forslag"}
+            {loadingSuggestion ? "Genererer forslag..." : "Lav forslag"}
           </button>
           <div style={{
             border: "1px solid #d1d5db",
             padding: window.innerWidth <= 480 ? "10px" : "12px",
             borderRadius: "8px",
             backgroundColor: "#f9fafb",
-            maxHeight: window.innerWidth <= 480 ? "180px" : window.innerWidth <= 768 ? "200px" : "300px",
+            whiteSpace: "pre-wrap",
+            wordWrap: "break-word",
+            maxHeight: window.innerWidth <= 480 ? "300px" : window.innerWidth <= 768 ? "350px" : "400px",
             overflowY: "auto",
             fontSize: window.innerWidth <= 480 ? "14px" : window.innerWidth <= 768 ? "13px" : "14px",
             lineHeight: "1.5",
-            marginTop: window.innerWidth <= 768 ? "12px" : "10px",
-            marginBottom: window.innerWidth <= 768 ? "12px" : "10px",
-            color: "#374151"
+            color: "#374151",
+            marginBottom: window.innerWidth <= 768 ? "12px" : "10px"
           }}>
             {suggestion ? (
               <div style={{ whiteSpace: "normal", wordWrap: "break-word" }}>
@@ -1434,15 +1435,20 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
-              fontWeight: "500"
+              fontWeight: "500",
+              boxSizing: "border-box"
             }}
             onMouseEnter={(e) => {
-              if (!saveMessage) {
+              if (!saveMessage.includes("✅") && !saveMessage.includes("⚠️")) {
                 e.target.style.backgroundColor = "#2563eb";
               }
             }}
             onMouseLeave={(e) => {
-              if (!saveMessage) {
+              if (saveMessage.includes("✅")) {
+                e.target.style.backgroundColor = "#10b981";
+              } else if (saveMessage.includes("⚠️")) {
+                e.target.style.backgroundColor = "#ef4444";
+              } else {
                 e.target.style.backgroundColor = "#3b82f6";
               }
             }}
