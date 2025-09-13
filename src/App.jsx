@@ -47,6 +47,11 @@ function App() {
   const [loadingSuggestion, setLoadingSuggestion] = useState(false);
   const [uploadedFileName, setUploadedFileName] = useState("");
   const [saveMessage, setSaveMessage] = useState("");
+  const [collapsedSections, setCollapsedSections] = useState({
+    summary: false,
+    profile: false,
+    goals: false
+  });
 
   // Tab colors for activities
   const tabColors = [
