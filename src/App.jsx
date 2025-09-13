@@ -1177,20 +1177,32 @@ ${(goals["færdighedsmål"] || []).join("\n")}
             }}
             onMouseEnter={(e) => {
               if (!loadingSuggestion) {
-      <div className="card">
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: '600', 
-          marginBottom: '1rem',
-          color: '#2d3748',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}>
+                e.target.style.backgroundColor = "#333333";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!loadingSuggestion) {
+                e.target.style.backgroundColor = "#000000";
+              } else {
+                e.target.style.backgroundColor = "#9ca3af";
+              }
+            }}
+          >
+            {loadingSuggestion ? "⏳ Genererer forslag..." : "Lav forslag"}
+          </button>
+          <div style={{
+            border: "1px solid #d1d5db",
+            padding: window.innerWidth <= 480 ? "10px" : "12px",
+            borderRadius: "8px",
             backgroundColor: "#f9fafb",
-        </h2>
-        <div className="form-group">
-          <label>
+            maxHeight: window.innerWidth <= 480 ? "180px" : window.innerWidth <= 768 ? "200px" : "300px",
+            overflowY: "auto",
+            fontSize: window.innerWidth <= 480 ? "14px" : window.innerWidth <= 768 ? "13px" : "14px",
+            lineHeight: "1.5",
+            marginTop: window.innerWidth <= 768 ? "12px" : "10px",
+            marginBottom: window.innerWidth <= 768 ? "12px" : "10px",
+            color: "#374151"
+          }}>
             {suggestion ? (
               <div style={{ whiteSpace: "normal", wordWrap: "break-word" }}>
                 {(() => {
@@ -1400,7 +1412,7 @@ ${(goals["færdighedsmål"] || []).join("\n")}
             ) : (
               <div style={{ 
                 fontStyle: "italic", 
-            <label>Evaluering:</label>
+                color: "#6b7280",
                 textAlign: "center",
                 padding: "20px"
               }}>
@@ -1422,10 +1434,21 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               boxSizing: "border-box",
               fontSize: window.innerWidth <= 480 ? "16px" : window.innerWidth <= 768 ? "14px" : "16px",
               transition: "background-color 0.2s ease",
-          </label>
-          <select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)}>
+              fontWeight: "500"
+            }}
+            onMouseEnter={(e) => {
+              if (!saveMessage) {
+                e.target.style.backgroundColor = "#2563eb";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!saveMessage) {
+                e.target.style.backgroundColor = "#3b82f6";
+              }
+            }}
+          >
             {saveMessage || "Gem aktivitet"}
-          </select>
+          </button>
         </div>
       </div>
     </div>
