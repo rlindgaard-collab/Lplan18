@@ -1432,12 +1432,12 @@ ${(goals["færdighedsmål"] || []).join("\n")}
               fontWeight: "500"
             }}
             onMouseEnter={(e) => {
-              if (!saveMessage.includes("✅") && !saveMessage.includes("⚠️")) {
+              if (!saveMessage) {
                 e.target.style.backgroundColor = "#2563eb";
               }
             }}
             onMouseLeave={(e) => {
-              if (!saveMessage.includes("✅") && !saveMessage.includes("⚠️")) {
+              if (!saveMessage) {
                 e.target.style.backgroundColor = "#3b82f6";
               }
             }}
